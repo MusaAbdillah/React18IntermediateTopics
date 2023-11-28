@@ -10,9 +10,9 @@ interface LogoutAction {
 
 type AuthAction = LoginAction | LogoutAction
 
-const loginReducer =  (email: string, action: AuthAction): string => {
+const loginReducer =  (username: string, action: AuthAction): string => {
     if (action.type === 'LOGIN') return action.username;
-    return ''
+    return username
 }
 
 export default loginReducer;
