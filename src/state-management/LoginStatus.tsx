@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 
-import loginReducer from "./reducer/loginReducer";
+import loginReducer from "./reducer/authReducer";
 
 const LoginStatus = () => {
   // const [user, setUser] = useState('');
@@ -11,7 +11,7 @@ const LoginStatus = () => {
       <>
         <div>
           <span className="mx-2">{user}</span>
-          <a onClick={() => dispatch({type: 'LOGOUT', email: ""})} href="#">
+          <a onClick={() => dispatch({type: 'LOGOUT'})} href="#">
             Logout
           </a>
         </div>
@@ -19,7 +19,7 @@ const LoginStatus = () => {
     );
   return (
     <div>
-      <a onClick={() => dispatch({type: 'LOGIN', email: "musa.abdillah@ottodigital.id"})} href="#">
+      <a onClick={() => dispatch({type: 'LOGIN', username: "musa.abdillah@ottodigital.id"})} href="#">
         Login
       </a>
     </div>
