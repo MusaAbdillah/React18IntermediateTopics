@@ -5,19 +5,20 @@ import NavBar from './state-management/NavBar';
 import HomePage from './state-management/HomePage';
 import AuthProvider from './state-management/provider/AuthProvider';
 import TaskContext from './state-management/context/taskContext';
+import TaskProvider from './state-management/provider/TaskProvider';
 
 function App() {
 
-  const [tasks, taskDispatch] = useReducer(taskReducer, [])
+  //const [tasks, taskDispatch] = useReducer(taskReducer, [])
   //const [username, authDispatch] = useReducer(AuthReducer, '')
 
   return(
     <>
       <AuthProvider>
-        <TaskContext.Provider value={{tasks, dispatch: taskDispatch}}>
+        <TaskProvider>
           <NavBar />
           <HomePage />
-        </TaskContext.Provider>
+        </TaskProvider>
       </AuthProvider>
     </>
   )

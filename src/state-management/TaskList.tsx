@@ -2,6 +2,7 @@ import { useContext, useReducer, useState } from 'react';
 import taskReducer from './reducer/taskReducer';
 import TaskContext from './context/taskContext';
 import AuthContext from './context/AuthContext';
+import UseTask from './hook/UseTask';
 
 interface Task {
   id: number;
@@ -11,7 +12,7 @@ interface Task {
 const TaskList = () => {
   // const [tasks, setTasks] = useState<Task[]>([]);
   // const [tasks, dispatch] = useReducer(taskReducer, [])
-  const {tasks, dispatch} = useContext(TaskContext);
+  const {tasks, dispatch} = UseTask();
   const {username} = useContext(AuthContext);
 
   return (
