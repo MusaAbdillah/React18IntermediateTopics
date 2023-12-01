@@ -1,10 +1,10 @@
 import { useReducer } from 'react';
 import './App.css';
-import TaskContext from './state-management/context/taskContext';
 import taskReducer from './state-management/reducer/taskReducer';
 import NavBar from './state-management/NavBar';
 import HomePage from './state-management/HomePage';
 import AuthProvider from './state-management/provider/AuthProvider';
+import TaskContext from './state-management/context/taskContext';
 
 function App() {
 
