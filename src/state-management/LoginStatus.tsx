@@ -1,16 +1,18 @@
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 
 import loginReducer from "./reducer/authReducer";
+import AuthContext from "./context/AuthContext";
 
 const LoginStatus = () => {
   // const [user, setUser] = useState('');
-  const [user, dispatch] = useReducer(loginReducer, '')
+  // const [user, dispatch] = useReducer(loginReducer, '')
+  const {username, dispatch} = useContext(AuthContext);
 
-  if (user)
+  if (username)
     return (
       <>
         <div>
-          <span className="mx-2">{user}</span>
+          <span className="mx-2">{username}</span>
           <a onClick={() => dispatch({type: 'LOGOUT'})} href="#">
             Logout
           </a>
