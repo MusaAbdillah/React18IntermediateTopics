@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { AuthAction } from "./AuthProvider";
 
 interface AuthStore {
     user: string

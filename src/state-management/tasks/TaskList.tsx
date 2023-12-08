@@ -1,6 +1,6 @@
 import { useContext, useReducer, useState } from 'react';
 import TaskContext from './TaskContext';
-import { UseAuth } from '../auth/LoginStatus';
+import UserAuthStore from '../auth/AuthStore';
 
 
 export const UseTask = () => useContext(TaskContext);
@@ -9,11 +9,11 @@ const TaskList = () => {
   // const [tasks, setTasks] = useState<Task[]>([]);
   // const [tasks, dispatch] = useReducer(taskReducer, [])
   const {tasks, dispatch} = UseTask();
-  const {username} = UseAuth();
+  const {user} = UserAuthStore();
 
   return (
     <>
-    <p>User: {username}</p>
+    <p>User: {user}</p>
       <button
         onClick={() =>
           dispatch(
