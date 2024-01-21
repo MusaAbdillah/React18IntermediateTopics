@@ -1,8 +1,15 @@
 import React from 'react'
 import UserListPage from './UserListPage'
-import { Outlet } from 'react-router'
+import { Navigate, Outlet } from 'react-router'
+import useAuth from './hooks/useAuth'
 
 function UserPage() {
+  const {user} = useAuth(); 
+
+  if (!user) {
+    return <Navigate to='/login'/>
+  }
+
   return (
     <div>
         <div className="row">
